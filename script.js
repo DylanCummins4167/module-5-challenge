@@ -1,7 +1,5 @@
-<script>
-var dt = new Date();
-document.getElementById('date-time').innerHTML=dt;
-</script>
+var d = new Date();
+var strDate = d.getFullYear() + "/" + (d.getMonth()+1) + "/" + d.getDate();
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
