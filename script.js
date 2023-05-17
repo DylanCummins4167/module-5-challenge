@@ -8,6 +8,35 @@ Date.prototype.yyyymmdd = function() {
 var date = new Date();
 console.log( date.yyyymmdd() );
 $(function () {
+  function updateClock() {
+  var currentTime = new Date();
+
+  var hours = currentTime.getHours();
+  var minutes = currentTime.getMinutes();
+  var seconds = currentTime.getSeconds();
+
+  var month = currentTime.getMonth() + 1;
+  var day = currentTime.getDate();
+  var year = currentTime.getFullYear();
+
+  // Pad the time and date with leading zeros
+  hours = (hours < 10 ? "0" : "") + hours;
+  minutes = (minutes < 10 ? "0" : "") + minutes;
+  seconds = (seconds < 10 ? "0" : "") + seconds;
+
+  month = (month < 10 ? "0" : "") + month;
+  day = (day < 10 ? "0" : "") + day;
+
+  // Set the time and date
+  var timeString = hours + ":" + minutes + ":" + seconds;
+  var dateString = month + "/" + day + "/" + year;
+
+  document.getElementById("time").innerHTML = timeString;
+  document.getElementById("date").innerHTML = dateString;
+}
+
+// Update the clock every second
+setInterval(updateClock, 1000);
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
