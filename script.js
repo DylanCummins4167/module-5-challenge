@@ -41,7 +41,7 @@ setInterval(updateClock, 1000);
   
   var hourPast = hourPast < currentTime;
 var hourNow = currentTime;
-var hourFuture = hourFuture < currentTime;
+var hourFuture = hourFuture > currentTime;
   
   var hourNow = currentTime;
 console.log(hourNow)
