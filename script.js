@@ -39,6 +39,18 @@ $(function () {
 setInterval(updateClock, 1000);
   //
   
-  
+  var hourNow = currentTime;
+console.log(hourNow)
+console.log(currentTime)
+    function backgroundColorEdit(){
+        if (hourNow == currentTime){
+            document.getElementsByClassName("backgroundTool").style.backgroundColor = "#ff0000";
+        }else if (hourNow < currentTime){
+            document.getElementsByClassName("backgroundTool").style.backgroundColor = "#d3d3d3";
+        }else 
+        {
+            document.getElementsByClassName("backgroundTool").style.backgroundColor = "#90ee90";
+        }
+}
   
 });
