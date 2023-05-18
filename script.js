@@ -38,28 +38,7 @@ $(function () {
 // Update the clock every second
 setInterval(updateClock, 1000);
   //
-  
-// Get the current hour
-var currentHour = new Date().getHours();
 
-
-
-
-  // Apply color code based on the current hour
-  if (i < currentHour - 9) {
-    row.style.backgroundColor = "lightgray"; // Past hour
-  } else if (i === currentHour - 9) {
-    row.style.backgroundColor = "yellow"; // Present hour
-  } else {
-    row.style.backgroundColor = "white"; // Future hour
-  }
-
-  // Append the row to the table
-  table.appendChild(row);
-}
-
-// Append the table to the body of the document
-document.body.appendChild(table);
   
   
 });
