@@ -39,22 +39,52 @@ $(function () {
 setInterval(updateClock, 1000);
   //
   
-  var hourPast = hourPast < currentTime;
-var hourNow = currentTime;
-var hourFuture = hourFuture < currentTime;
-  
-  var hourNow = currentTime;
-console.log(hourNow)
-console.log(currentTime)
-    function backgroundColorEdit(){
-        if (hourNow == currentTime){
-            document.getElementsByClassName("backgroundTool").style.backgroundColor = "#ff0000";
-        }else if (hourNow < currentTime){
-            document.getElementsByClassName("backgroundTool").style.backgroundColor = "#d3d3d3";
-        }else 
-        {
-            document.getElementsByClassName("backgroundTool").style.backgroundColor = "#90ee90";
-        }
+// Get the current hour
+var currentHour = new Date().getHours();
+
+// Array of hours from 9 AM to 5 PM
+var hours = [
+  "9 AM",
+  "10 AM",
+  "11 AM",
+  "12 PM",
+  "1 PM",
+  "2 PM",
+  "3 PM",
+  "4 PM",
+  "5 PM"
+];
+
+// Create a table element
+var table = document.createElement("table");
+
+// Loop through each hour
+for (var i = 0; i < hours.length; i++) {
+  var hour = hours[i];
+
+  // Create a row element
+  var row = document.createElement("tr");
+
+  // Create a cell element for the hour
+  var hourCell = document.createElement("td");
+  hourCell.textContent = hour;
+  row.appendChild(hourCell);
+
+  // Apply color code based on the current hour
+  if (i < currentHour - 9) {
+    row.style.backgroundColor = "lightgray"; // Past hour
+  } else if (i === currentHour - 9) {
+    row.style.backgroundColor = "yellow"; // Present hour
+  } else {
+    row.style.backgroundColor = "white"; // Future hour
+  }
+
+  // Append the row to the table
+  table.appendChild(row);
 }
+
+// Append the table to the body of the document
+document.body.appendChild(table);
+  
   
 });
