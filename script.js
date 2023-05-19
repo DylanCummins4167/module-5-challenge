@@ -39,7 +39,7 @@ $(function () {
 setInterval(updateClock, 1000);
   //
 
-function timeTracker() {
+
   var timeNow = dayjs().hour();
   $(".time-block").each(function () {
     var blockTime = parseInt($(this).attr("id").split("hour")[1]);
@@ -57,6 +57,6 @@ function timeTracker() {
       $(this).addClass("future");
     }
   });
-}
+
   
 });
