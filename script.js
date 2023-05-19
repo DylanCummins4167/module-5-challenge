@@ -39,8 +39,7 @@ $(function () {
 setInterval(updateClock, 1000);
   //
 
-$("#hour9 .description").val(localStorage.getItem(hour9));
-  timeTracker();
+
  var timeNow = dayjs().hour();
   $(".time-block").each(function () {
     var blockTime = parseInt($(this).attr("id").split("hour")[1]);
@@ -59,5 +58,7 @@ $("#hour9 .description").val(localStorage.getItem(hour9));
     }
   });
 
+$("#hour9 .description").val(localStorage.getItem(hour9));
+  timeTracker();
   
 });
