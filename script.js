@@ -43,11 +43,11 @@ setInterval(updateClock, 1000);
 
   $(".time-block").each(function () {
     var blockTime = parseInt($(this).attr("id").split("hour")[1]);
-    if (blockTime < hour) {
+    if (blockTime < hours) {
       $(this).removeClass("future");
       $(this).removeClass("present");
       $(this).addClass("past");
-    } else if (blockTime === hour) {
+    } else if (blockTime === hours) {
       $(this).removeClass("past");
       $(this).removeClass("future");
       $(this).addClass("present");
